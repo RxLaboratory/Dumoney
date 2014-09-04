@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>887</width>
+    <height>644</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Dumoney</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QDateTimeEdit" name="dateActuelle">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="buttonSymbols">
+       <enum>QAbstractSpinBox::NoButtons</enum>
+      </property>
+      <property name="keyboardTracking">
+       <bool>false</bool>
+      </property>
+      <property name="currentSection">
+       <enum>QDateTimeEdit::DaySection</enum>
+      </property>
+      <property name="displayFormat">
+       <string>dddd d MMMM yyyy --- HH:mm:ss</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QComboBox" name="mois">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="frame">
+              <bool>false</bool>
+             </property>
+             <item>
+              <property name="text">
+               <string> -</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Janvier</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Février</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Mars</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Avril</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Mai</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Juin</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Juillet</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Aout</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Septembre</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Octobre</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Novembre</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Décembre</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="annee">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="frame">
+              <bool>false</bool>
+             </property>
+             <property name="prefix">
+              <string/>
+             </property>
+             <property name="minimum">
+              <number>1900</number>
+             </property>
+             <property name="maximum">
+              <number>3000</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QToolButton" name="precedent">
+             <property name="minimumSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>&lt;</string>
+             </property>
+             <property name="icon">
+              <iconset resource="ressources.qrc">
+               <normaloff>:/icones/Arrow Left.png</normaloff>:/icones/Arrow Left.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>24</width>
+               <height>24</height>
+              </size>
+             </property>
+             <property name="autoRaise">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="today">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Aujourd'hui</string>
+             </property>
+             <property name="autoRaise">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="suivant">
+             <property name="minimumSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>&gt;</string>
+             </property>
+             <property name="icon">
+              <iconset resource="ressources.qrc">
+               <normaloff>:/icones/Arrow Right.png</normaloff>:/icones/Arrow Right.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>24</width>
+               <height>24</height>
+              </size>
+             </property>
+             <property name="autoRaise">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLineEdit" name="recherche">
+             <property name="placeholderText">
+              <string>Recherche...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="toolButton">
+             <property name="text">
+              <string>X</string>
+             </property>
+             <property name="autoRaise">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="frameShape">
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <property name="leftMargin">
+           <number>3</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>1</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="horizontalSpacing">
+           <number>6</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
+          <item row="1" column="5">
+           <widget class="QSpinBox" name="vMois">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::NoButtons</enum>
+            </property>
+            <property name="suffix">
+             <string> Euros</string>
+            </property>
+            <property name="minimum">
+             <number>-100000</number>
+            </property>
+            <property name="maximum">
+             <number>100000</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Actuel</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7">
+           <widget class="QSpinBox" name="totAnnee">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::NoButtons</enum>
+            </property>
+            <property name="suffix">
+             <string> Euros</string>
+            </property>
+            <property name="minimum">
+             <number>-100000</number>
+            </property>
+            <property name="maximum">
+             <number>100000</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QSpinBox" name="totActuel">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::NoButtons</enum>
+            </property>
+            <property name="suffix">
+             <string> Euros</string>
+            </property>
+            <property name="minimum">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <number>8760</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QSpinBox" name="totMois">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::NoButtons</enum>
+            </property>
+            <property name="suffix">
+             <string> Euros</string>
+            </property>
+            <property name="minimum">
+             <number>-100000</number>
+            </property>
+            <property name="maximum">
+             <number>100000</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="labelMois">
+            <property name="text">
+             <string>Mois</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="5">
+           <widget class="QSpinBox" name="hMois">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::NoButtons</enum>
+            </property>
+            <property name="suffix">
+             <string> Heures</string>
+            </property>
+            <property name="minimum">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <number>8760</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="7">
+           <widget class="QSpinBox" name="vAnnee">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::NoButtons</enum>
+            </property>
+            <property name="suffix">
+             <string> Euros</string>
+            </property>
+            <property name="minimum">
+             <number>-100000</number>
+            </property>
+            <property name="maximum">
+             <number>100000</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="7">
+           <widget class="QSpinBox" name="hAnnee">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="buttonSymbols">
+             <enum>QAbstractSpinBox::NoButtons</enum>
+            </property>
+            <property name="suffix">
+             <string> Heures</string>
+            </property>
+            <property name="minimum">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <number>8760</number>
+            </property>
+            <property name="value">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="QLabel" name="labelAnnee">
+            <property name="text">
+             <string>Année</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Solde : </string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <pointsize>8</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Variation :</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="table">
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="gridStyle">
+       <enum>Qt::DotLine</enum>
+      </property>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Date</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Date Facturation</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nom</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Heures</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Montant</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>887</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFichier">
+    <property name="title">
+     <string>Fichier</string>
+    </property>
+    <addaction name="actionExporter"/>
+    <addaction name="actionImporter"/>
+    <addaction name="actionSupprimer_toutes_les_donn_es"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>?</string>
+    </property>
+    <addaction name="actionA_Propos"/>
+    <addaction name="actionA_Propos_de_Qt"/>
+   </widget>
+   <widget class="QMenu" name="menuEdition">
+    <property name="title">
+     <string>Gestion</string>
+    </property>
+    <addaction name="actionTypes"/>
+    <addaction name="actionCat_gories"/>
+    <addaction name="actionClients"/>
+   </widget>
+   <widget class="QMenu" name="menuComptes">
+    <property name="title">
+     <string>Comptes</string>
+    </property>
+    <addaction name="actionAjouter_un_cr_dit"/>
+    <addaction name="actionAjouter_un_d_bit"/>
+    <addaction name="separator"/>
+    <addaction name="actionModifier"/>
+    <addaction name="actionSupprimer"/>
+   </widget>
+   <widget class="QMenu" name="menuAffichage">
+    <property name="title">
+     <string>Affichage</string>
+    </property>
+    <addaction name="actionAfficher_tout"/>
+   </widget>
+   <addaction name="menuFichier"/>
+   <addaction name="menuEdition"/>
+   <addaction name="menuComptes"/>
+   <addaction name="menuAffichage"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionTypes"/>
+   <addaction name="actionCat_gories"/>
+   <addaction name="actionClients"/>
+   <addaction name="separator"/>
+   <addaction name="actionAjouter_un_cr_dit"/>
+   <addaction name="actionAjouter_un_d_bit"/>
+   <addaction name="separator"/>
+   <addaction name="actionModifier"/>
+   <addaction name="actionSupprimer"/>
+   <addaction name="separator"/>
+  </widget>
+  <action name="actionQuitter">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/Stop.png</normaloff>:/icones/Stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionA_Propos">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/Button Info.png</normaloff>:/icones/Button Info.png</iconset>
+   </property>
+   <property name="text">
+    <string>A Propos...</string>
+   </property>
+  </action>
+  <action name="actionA_Propos_de_Qt">
+   <property name="text">
+    <string>A Propos de Qt...</string>
+   </property>
+  </action>
+  <action name="actionTypes">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/Document 2.png</normaloff>:/icones/Document 2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Types...</string>
+   </property>
+  </action>
+  <action name="actionCat_gories">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/Drawer Closed.png</normaloff>:/icones/Drawer Closed.png</iconset>
+   </property>
+   <property name="text">
+    <string>Catégories...</string>
+   </property>
+  </action>
+  <action name="actionAjouter_un_cr_dit">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/News Add.png</normaloff>:/icones/News Add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ajouter un crédit...</string>
+   </property>
+  </action>
+  <action name="actionAjouter_un_d_bit">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/News Remove.png</normaloff>:/icones/News Remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ajouter un débit...</string>
+   </property>
+  </action>
+  <action name="actionSupprimer">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/News delete.png</normaloff>:/icones/News delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Supprimer</string>
+   </property>
+  </action>
+  <action name="actionModifier">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/News edit.png</normaloff>:/icones/News edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Modifier...</string>
+   </property>
+  </action>
+  <action name="actionClients">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/User.png</normaloff>:/icones/User.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clients / Employeurs...</string>
+   </property>
+  </action>
+  <action name="actionAfficher_tout">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/Star On.png</normaloff>:/icones/Star On.png</iconset>
+   </property>
+   <property name="text">
+    <string>Afficher tout</string>
+   </property>
+  </action>
+  <action name="actionImporter">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/File Receive.png</normaloff>:/icones/File Receive.png</iconset>
+   </property>
+   <property name="text">
+    <string>Importer des données...</string>
+   </property>
+   <property name="iconText">
+    <string>Importer</string>
+   </property>
+   <property name="toolTip">
+    <string>Importer</string>
+   </property>
+  </action>
+  <action name="actionExporter">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/File Send.png</normaloff>:/icones/File Send.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exporter les données...</string>
+   </property>
+   <property name="iconText">
+    <string>Exporter</string>
+   </property>
+   <property name="toolTip">
+    <string>Exporter</string>
+   </property>
+  </action>
+  <action name="actionSupprimer_toutes_les_donn_es">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icones/File Remove.png</normaloff>:/icones/File Remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Supprimer toutes les données...</string>
+   </property>
+   <property name="iconText">
+    <string>Supprimer</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="ressources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

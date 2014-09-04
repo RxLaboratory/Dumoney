@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/icones">
+        <file>Arrow Left.png</file>
+        <file>Arrow Right.png</file>
+        <file>Button Info.png</file>
+        <file>Button Remove.png</file>
+        <file>Button White Check.png</file>
+        <file>Calendar 2.png</file>
+        <file>Document 2.png</file>
+        <file>Drawer Closed.png</file>
+        <file>News Add.png</file>
+        <file>News delete.png</file>
+        <file>News edit.png</file>
+        <file>News Remove.png</file>
+        <file>News.png</file>
+        <file>Stop.png</file>
+        <file>User.png</file>
+        <file>Star On.png</file>
+        <file>Document Checklist.png</file>
+        <file>Button Add.png</file>
+        <file>File Receive.png</file>
+        <file>File Send.png</file>
+        <file>File Remove.png</file>
+    </qresource>
+</RCC>
