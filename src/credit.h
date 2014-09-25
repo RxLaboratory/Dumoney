@@ -20,6 +20,10 @@ private slots:
 
     void on_client_activated(const QString &arg1);
 
+    void on_type_currentIndexChanged(const QString &arg1);
+
+    void on_dateP_dateChanged(const QDate &date);
+
 private:
     QSqlDatabase db;
     QString id;

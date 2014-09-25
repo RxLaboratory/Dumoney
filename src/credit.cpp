@@ -128,14 +128,11 @@ void Credit::on_calcul_clicked()
     else if (query.value(1).toInt() == 2 && dateP->date().month() >= 4 && dateP->date().month() <= 6) dateC->setDate(QDate(dateP->date().year(),7,query.value(2).toInt()));
     else if (query.value(1).toInt() == 2 && dateP->date().month() >= 7 && dateP->date().month() <= 9) dateC->setDate(QDate(dateP->date().year(),10,query.value(2).toInt()));
     else if (query.value(1).toInt() == 2 && dateP->date().month() >= 10 && dateP->date().month() <= 12) dateC->setDate(QDate(dateP->date().year()+1,1,query.value(2).toInt()));
-
-
-
 }
 
 void Credit::on_dateF_editingFinished()
 {
-    dateP->setDate(dateF->date());
+    if (dateP->date() < dateF->date()) dateP->setDate(dateF->date());
 }
 
 void Credit::on_client_activated(const QString &arg1)
@@ -164,4 +161,41 @@ void Credit::on_client_activated(const QString &arg1)
         }
     }
     if(nom->text() == "") nom->setText(arg1);
+}
+
+void Credit::on_type_currentIndexChanged(const QString &arg1)
+{
+    QString q = "SELECT tauxCotisations,decalageCotisations,jourCotisations FROM Types WHERE nom = '" + type->currentText().replace("'","''") + "';";
+    DufSqlQuery query(q,db);
+    query.verif();
+    query.first();
+
+    if (query.value(1).isValid() && query.value(1).toInt() == 0)
+    {
+        dateC->setEnabled(false);
+    }
+    else
+    {
+        dateC->setEnabled(true);
+    }
+    if (query.value(1).toInt() == 0) dateC->setDate(dateP->date());
+    else if (query.value(1).toInt() == 1) dateC->setDate(QDate(dateP->date().year(),dateP->date().month()+1,query.value(2).toInt()));
+    else if (query.value(1).toInt() == 2 && dateP->date().month() >= 1 && dateP->date().month() <= 3) dateC->setDate(QDate(dateP->date().year(),4,query.value(2).toInt()));
+    else if (query.value(1).toInt() == 2 && dateP->date().month() >= 4 && dateP->date().month() <= 6) dateC->setDate(QDate(dateP->date().year(),7,query.value(2).toInt()));
+    else if (query.value(1).toInt() == 2 && dateP->date().month() >= 7 && dateP->date().month() <= 9) dateC->setDate(QDate(dateP->date().year(),10,query.value(2).toInt()));
+    else if (query.value(1).toInt() == 2 && dateP->date().month() >= 10 && dateP->date().month() <= 12) dateC->setDate(QDate(dateP->date().year()+1,1,query.value(2).toInt()));
+}
+
+void Credit::on_dateP_dateChanged(const QDate &date)
+{
+    QString q = "SELECT tauxCotisations,decalageCotisations,jourCotisations FROM Types WHERE nom = '" + type->currentText().replace("'","''") + "';";
+    DufSqlQuery query(q,db);
+    query.verif();
+    query.first();
+    if (query.value(1).toInt() == 0) dateC->setDate(dateP->date());
+    else if (query.value(1).toInt() == 1) dateC->setDate(QDate(dateP->date().year(),dateP->date().month()+1,query.value(2).toInt()));
+    else if (query.value(1).toInt() == 2 && dateP->date().month() >= 1 && dateP->date().month() <= 3) dateC->setDate(QDate(dateP->date().year(),4,query.value(2).toInt()));
+    else if (query.value(1).toInt() == 2 && dateP->date().month() >= 4 && dateP->date().month() <= 6) dateC->setDate(QDate(dateP->date().year(),7,query.value(2).toInt()));
+    else if (query.value(1).toInt() == 2 && dateP->date().month() >= 7 && dateP->date().month() <= 9) dateC->setDate(QDate(dateP->date().year(),10,query.value(2).toInt()));
+    else if (query.value(1).toInt() == 2 && dateP->date().month() >= 10 && dateP->date().month() <= 12) dateC->setDate(QDate(dateP->date().year()+1,1,query.value(2).toInt()));
 }

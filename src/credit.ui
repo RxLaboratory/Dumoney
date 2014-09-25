@@ -53,6 +53,9 @@
          <height>32</height>
         </size>
        </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
        <property name="placeholderText">
         <string>Nom</string>
        </property>
@@ -78,6 +81,9 @@
          <width>0</width>
          <height>32</height>
         </size>
+       </property>
+       <property name="frame">
+        <bool>false</bool>
        </property>
        <item>
         <property name="text">
@@ -107,6 +113,9 @@
          <height>32</height>
         </size>
        </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
        <item>
         <property name="text">
          <string>Autre</string>
@@ -135,6 +144,9 @@
          <height>32</height>
         </size>
        </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
        <item>
         <property name="text">
          <string>Autre</string>
@@ -162,6 +174,9 @@
          <width>0</width>
          <height>32</height>
         </size>
+       </property>
+       <property name="frame">
+        <bool>false</bool>
        </property>
        <property name="suffix">
         <string> Heures</string>
@@ -192,6 +207,9 @@
          <height>32</height>
         </size>
        </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
        <property name="displayFormat">
         <string>dd MMMM yyyy</string>
        </property>
@@ -221,6 +239,9 @@
          <height>32</height>
         </size>
        </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
        <property name="displayFormat">
         <string>dd MMMM yyyy</string>
        </property>
@@ -231,6 +252,12 @@
      </item>
      <item row="7" column="1">
       <widget class="QToolButton" name="calcul">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -263,6 +290,9 @@
          <height>32</height>
         </size>
        </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
        <property name="suffix">
         <string> Euros</string>
        </property>
@@ -292,6 +322,9 @@
          <height>32</height>
         </size>
        </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
        <property name="suffix">
         <string> Euros</string>
        </property>
@@ -320,6 +353,9 @@
          <width>0</width>
          <height>32</height>
         </size>
+       </property>
+       <property name="frame">
+        <bool>false</bool>
        </property>
        <property name="displayFormat">
         <string>dd MMMM yyyy</string>
